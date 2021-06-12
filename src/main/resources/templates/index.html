@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="header.html :: header">
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="container">
+    <div class="row d-flex justify-content-center">
+        <div class="card text-dark bg-info mb-3" style="max-width: 30rem;">
+            <div class="card-header">CSV Upload</div>
+            <div class="card-body">
+                <form th:method="POST" th:action="@{/upload-csv-file}" enctype="multipart/form-data">
+                    <div class="form-group mt-3">
+                        <label for="file">Select a CSV file</label>
+                        <input type="file" name="file" class="form-control-file" id="file" accept=".csv">
+                    </div>
+                    <button type="submit" class="btn-btn-primary">Import Numbers</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
